@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-import Swal from "sweetalert2"; 
+import Swal from "sweetalert2";
 
 const Register = () => {
   const { createUser } = useAuth();
@@ -36,7 +36,7 @@ const Register = () => {
   };
 
   return (
-    <div className="bg-[url(https://kit.creativemox.com/bugshield/wp-content/uploads/sites/9/2023/10/brick-wall.png)] min-h-screen">
+    <div className="bg-[url(https://i.ibb.co/tJC1tND/brick-wall.png)] min-h-screen">
       <div className="bg-[#f0f1edcc] min-h-screen">
         <div className="container mx-auto w-[90%] lg:w-2/4 py-28">
           <form
