@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
+import SocialLogin from "../../components/socialLogin/socialLogin";
 
 const Login = () => {
   const { userLogIn } = useAuth();
@@ -75,6 +76,7 @@ const Login = () => {
               className="text-white uppercase font-semibold btn mt-5 rounded-lg py-3 w-full bg-[#E39C0D] hover:bg-[#698F3F]"
               value="Login"
             />
+            <SocialLogin></SocialLogin>
           </form>
         </div>
       </div>

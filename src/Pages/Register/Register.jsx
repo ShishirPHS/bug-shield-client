@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 import { updateProfile } from "firebase/auth";
+import SocialLogin from "../../components/socialLogin/socialLogin";
 
 const Register = () => {
   const { createUser } = useAuth();
@@ -107,6 +108,7 @@ const Register = () => {
               className="text-white uppercase font-semibold btn mt-5 rounded-lg py-3 w-full bg-[#E39C0D] hover:bg-[#698F3F]"
               value="Register"
             />
+            <SocialLogin></SocialLogin>
           </form>
         </div>
       </div>
