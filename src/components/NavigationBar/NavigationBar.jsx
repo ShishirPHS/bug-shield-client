@@ -81,9 +81,7 @@ const NavigationBar = () => {
               Home
             </NavLink>
             {user ? (
-              <button onClick={handleLogOut} className="log-out-btn">
-                Log Out
-              </button>
+              <a onClick={handleLogOut}>Log Out</a>
             ) : (
               <NavLink to="/login">Login</NavLink>
             )}
@@ -92,7 +90,7 @@ const NavigationBar = () => {
                 <button
                   id="hs-mega-menu-basic-dr"
                   type="button"
-                  className="flex items-center w-full text-white hover:text-orange-500 font-medium dark:text-gray-400 dark:hover:text-gray-500 "
+                  className="flex items-center w-full text-white hover:text-[#FFA500] font-medium dark:text-gray-400 dark:hover:text-gray-500 "
                 >
                   Dashboard
                   <svg
@@ -113,29 +111,49 @@ const NavigationBar = () => {
                 </button>
                 <div className="hs-dropdown-menu bg-[#1F2119] transition-[opacity,margin] duration-[0.1ms] sm:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 sm:w-48 z-10 sm:shadow-md rounded-lg p-2 before:absolute top-full before:-top-5 before:left-0 before:w-full before:h-5 hidden">
                   <div className="hs-dropdown relative [--strategy:static] sm:[--strategy:absolute] [--adaptive:none]"></div>
-                  <NavLink
-                    to="/myServices"
-                    className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800   focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700"
-                  >
-                    My-services
-                  </NavLink>
-                  <NavLink
-                    to="/addServices"
-                    className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800   focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700"
-                  >
-                    Add-services
-                  </NavLink>
-                  <NavLink
-                    to="/mySchedules"
-                    className="flex items-center gap-x-3.5 py-2 px-3 rounded-md text-sm text-gray-800   focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700"
-                  >
-                    My-schedules
-                  </NavLink>
+                  <div className="py-2">
+                    <NavLink
+                      to="/myServices"
+                      className="flex items-center gap-x-3.5 px-3 rounded-md text-sm text-gray-800   focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700"
+                    >
+                      My-services
+                    </NavLink>
+                  </div>
+                  <div className="py-2">
+                    <NavLink
+                      to="/addServices"
+                      className="flex items-center gap-x-3.5 px-3 rounded-md text-sm text-gray-800   focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700"
+                    >
+                      Add-services
+                    </NavLink>
+                  </div>
+                  <div className="py-2">
+                    <NavLink
+                      to="/mySchedules"
+                      className="flex items-center gap-x-3.5 px-3 rounded-md text-sm text-gray-800   focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700"
+                    >
+                      My-schedules
+                    </NavLink>
+                  </div>
                 </div>
               </div>
             )}
           </div>
         </div>
+        {/* <div className="hidden md:block">
+          {user && (
+            <div className="ml-10 flex items-center">
+              <p className="text-white">{user?.displayName}</p>
+              <div className="ml-4 h-10 w-10 rounded-full">
+                <img
+                  className="h-full w-full rounded-full"
+                  src={user?.photoURL}
+                  alt="image of user"
+                />
+              </div>
+            </div>
+          )}
+        </div> */}
       </nav>
     </header>
   );

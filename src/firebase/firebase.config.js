@@ -3,14 +3,16 @@ import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+const fromEnv = import.meta.env;
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDuhSaWF4JhLPfmcQXO2ajHaICz9DXGUCQ",
-  authDomain: "bug-shield.firebaseapp.com",
-  projectId: "bug-shield",
-  storageBucket: "bug-shield.appspot.com",
-  messagingSenderId: "430093044065",
-  appId: "1:430093044065:web:9b69f783bdcd2aebc79d20",
+  apiKey: fromEnv.VITE_APIKEY,
+  authDomain: fromEnv.VITE_AUTHDOMAIN,
+  projectId: fromEnv.VITE_PROJECTID,
+  storageBucket: fromEnv.VITE_STORAGEBUCKET,
+  messagingSenderId: fromEnv.VITE_MESSAGINGSENDERID,
+  appId: fromEnv.VITE_APPID,
 };
 
 // Initialize Firebase
