@@ -27,56 +27,74 @@ const NavigationBar = () => {
   };
 
   return (
-    <header className="relative flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-[#1F2119] py-5">
+    <header className="relative flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full bg-[#1F2119] py-5">
       <nav
-        className="container w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between"
+        className="container w-full mx-auto px-4 md:flex md:items-center md:justify-between"
         aria-label="Global"
       >
         <div className="flex items-center justify-between">
           <Link to="/">
             <img
-              className="h-10"
+              className="w-[100px] md:w-[180px] h-10"
               src="https://i.ibb.co/nLYQy1B/logo.png"
               alt="website logo"
             />
           </Link>
-          <div className="sm:hidden">
-            <button
-              type="button"
-              className="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
-              data-hs-collapse="#navbar-with-mega-menu"
-              aria-controls="navbar-with-mega-menu"
-              aria-label="Toggle navigation"
-            >
-              <svg
-                className="hs-collapse-open:hidden w-4 h-4"
-                width="16"
-                height="16"
-                fill="currentColor"
-                viewBox="0 0 16 16"
+          <div className="flex justify-end">
+            <div className="block md:hidden mr-2">
+              {user && (
+                <div className="md:ml-10 ml-2 flex items-center">
+                  <p className="text-white text-xs text-right">
+                    {user?.displayName}
+                  </p>
+                  <div className="ml-4 h-8 w-8 rounded-full">
+                    <img
+                      className="h-full w-full rounded-full"
+                      src={user?.photoURL}
+                      alt="image of user"
+                    />
+                  </div>
+                </div>
+              )}
+            </div>
+            <div className="md:hidden">
+              <button
+                type="button"
+                className="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
+                data-hs-collapse="#navbar-with-mega-menu"
+                aria-controls="navbar-with-mega-menu"
+                aria-label="Toggle navigation"
               >
-                <path
-                  fillRule="evenodd"
-                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-                />
-              </svg>
-              <svg
-                className="hs-collapse-open:block hidden w-4 h-4"
-                width="16"
-                height="16"
-                fill="currentColor"
-                viewBox="0 0 16 16"
-              >
-                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-              </svg>
-            </button>
+                <svg
+                  className="hs-collapse-open:hidden w-4 h-4"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                  />
+                </svg>
+                <svg
+                  className="hs-collapse-open:block hidden w-4 h-4"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
         <div
           id="navbar-with-mega-menu"
-          className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block"
+          className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block"
         >
-          <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:pl-5">
+          <div className="flex flex-col gap-5 mt-5 md:flex-row md:items-center md:justify-end md:mt-0 md:pl-5">
             <NavLink to="/" className="font-medium" aria-current="page">
               Home
             </NavLink>
@@ -86,7 +104,7 @@ const NavigationBar = () => {
               <NavLink to="/login">Login</NavLink>
             )}
             {user && (
-              <div className="hs-dropdown [--strategy:static] sm:[--strategy:fixed] [--adaptive:none]">
+              <div className="hs-dropdown [--strategy:static] md:[--strategy:fixed] [--adaptive:none]">
                 <button
                   id="hs-mega-menu-basic-dr"
                   type="button"
@@ -109,8 +127,8 @@ const NavigationBar = () => {
                     ></path>
                   </svg>
                 </button>
-                <div className="hs-dropdown-menu bg-[#1F2119] transition-[opacity,margin] duration-[0.1ms] sm:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 sm:w-48 z-10 sm:shadow-md rounded-lg p-2 before:absolute top-full before:-top-5 before:left-0 before:w-full before:h-5 hidden">
-                  <div className="hs-dropdown relative [--strategy:static] sm:[--strategy:absolute] [--adaptive:none]"></div>
+                <div className="hs-dropdown-menu bg-[#1F2119] transition-[opacity,margin] duration-[0.1ms] md:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 md:w-48 z-10 md:shadow-md rounded-lg p-2 before:absolute top-full before:-top-5 before:left-0 before:w-full before:h-5 hidden">
+                  <div className="hs-dropdown relative [--strategy:static] md:[--strategy:absolute] [--adaptive:none]"></div>
                   <div className="py-2">
                     <NavLink
                       to="/myServices"
@@ -138,6 +156,20 @@ const NavigationBar = () => {
                 </div>
               </div>
             )}
+            <div className="hidden md:block">
+              {user && (
+                <div className="ml-10 flex items-center">
+                  <p className="text-white">{user?.displayName}</p>
+                  <div className="ml-4 h-10 w-10 rounded-full">
+                    <img
+                      className="h-full w-full rounded-full"
+                      src={user?.photoURL}
+                      alt="image of user"
+                    />
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
         {/* <div className="hidden md:block">
