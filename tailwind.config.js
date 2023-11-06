@@ -7,6 +7,10 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      Inter: ["Inter", "sans-serif"],
+      Cabin: ["Cabin", "sans-serif"],
+    },
   },
   plugins: [require("preline/plugin")],
 };
