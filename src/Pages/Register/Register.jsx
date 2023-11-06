@@ -1,6 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+import Swal from "sweetalert2"; 
 
 const Register = () => {
+  const { createUser } = useAuth();
+  const navigate = useNavigate();
+
   const handleRegister = (e) => {
     e.preventDefault();
 
@@ -10,6 +15,24 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(name, photo, email, password);
+
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        Swal.fire({
+          icon: "success",
+          text: "Registration successful",
+        });
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err);
+        Swal.fire({
+          icon: "error",
+          text: err.message,
+        });
+      });
   };
 
   return (
