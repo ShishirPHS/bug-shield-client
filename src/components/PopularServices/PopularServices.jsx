@@ -23,7 +23,7 @@ const PopularServices = () => {
           homeowners and businesses across the region.
         </p>
       </div>
-      <div className="px-5 grid grid-cols-1 gap-6">
+      <div className="px-5 grid grid-cols-1 xl:grid-cols-2 gap-6">
         {services?.length > 4
           ? services
               ?.slice(0, 4)
@@ -34,7 +34,7 @@ const PopularServices = () => {
               <ServiceCard key={service._id} service={service}></ServiceCard>
             ))}
       </div>
-      {services?.length >= 4 && (
+      {services?.length > 4 && (
         <div className="flex justify-center mt-10">
           <Link to="/services">
             <button className="text-white uppercase font-semibold btn mt-5 rounded-lg py-3 px-10 bg-[#E39C0D] hover:bg-[#698F3F]">

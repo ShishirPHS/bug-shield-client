@@ -1,30 +1,49 @@
 import PropTypes from "prop-types";
 
 const ServiceCard = ({ service }) => {
-  const { serviceImage, serviceName } = service;
+  const {
+    serviceImage,
+    serviceName,
+    description,
+    serviceProviderImage,
+    serviceProviderName,
+    price,
+  } = service;
   return (
     <div>
-      <div className="bg-white border rounded-xl shadow-sm sm:flex dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]">
-        <div className="flex-shrink-0 relative w-full rounded-t-xl overflow-hidden pt-[40%] sm:rounded-s-xl sm:max-w-[15rem] md:rounded-se-none md:max-w-xs">
+      <div className="grid grid-cols-2 p-8 xl:p-4 bg-white border rounded-xl h-full shadow-sm">
+        <div className="col-span-1 overflow-hidden">
           <img
-            className="w-full h-full absolute top-0 start-0 object-cover"
+            className="rounded-l-xl w-full h-full object-cover"
             src={serviceImage}
-            alt=""
+            alt={`image for ${serviceName}`}
           />
         </div>
-        <div className="flex flex-wrap">
-          <div className="p-4 flex flex-col h-full sm:p-7">
-            <h3 className="text-lg font-bold text-gray-800 dark:text-white">
-              {serviceName}
-            </h3>
-            <p className="mt-1 text-gray-500 dark:text-gray-400">
-              Some quick example text to build on the card title and make up the
-              bulk of the cards content.
-            </p>
-            <div className="mt-5 sm:mt-auto">
-              <p className="text-xs text-gray-500 dark:text-gray-500">
-                Last updated 5 mins ago
-              </p>
+        <div className="col-span-1">
+          <div className="p-4 flex flex-col h-full justify-center">
+            <div className="flex-grow">
+              <div>
+                <h3 className="text-xl font-bold text-gray-800">
+                  {serviceName}
+                </h3>
+                <p className="mt-1 text-sm text-gray-500">
+                  {description.slice(0, 100)}...
+                </p>
+                <h6 className="text-[#270f0f] font-semibold mt-1">{price}</h6>
+              </div>
+              <div className="mt-2">
+                <img
+                  className="w-10 h-10 rounded-full"
+                  src={serviceProviderImage}
+                  alt=""
+                />
+                <p className="text-sm">{serviceProviderName}</p>
+              </div>
+            </div>
+            <div className="mt-5">
+              <button className="text-white text-sm uppercase font-medium btn mt-5 rounded-lg py-3 px-10 bg-[#E39C0D] hover:bg-[#698F3F]">
+                View Details
+              </button>
             </div>
           </div>
         </div>
