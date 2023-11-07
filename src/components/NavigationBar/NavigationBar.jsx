@@ -98,11 +98,6 @@ const NavigationBar = () => {
             <NavLink to="/" className="font-medium" aria-current="page">
               Home
             </NavLink>
-            {user ? (
-              <a onClick={handleLogOut}>Log Out</a>
-            ) : (
-              <NavLink to="/login">Login</NavLink>
-            )}
             {user && (
               <div className="hs-dropdown [--strategy:static] md:[--strategy:fixed] [--adaptive:none]">
                 <button
@@ -156,6 +151,14 @@ const NavigationBar = () => {
                 </div>
               </div>
             )}
+            {user ? (
+              <a className="cursor-pointer" onClick={handleLogOut}>
+                Log Out
+              </a>
+            ) : (
+              <NavLink to="/login">Login</NavLink>
+            )}
+
             <div className="hidden md:block">
               {user && (
                 <div className="ml-10 flex items-center">
