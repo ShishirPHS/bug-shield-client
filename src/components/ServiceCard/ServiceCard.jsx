@@ -9,6 +9,7 @@ const ServiceCard = ({ service }) => {
     serviceProviderName,
     price,
   } = service;
+  
   return (
     <div>
       <div className="grid grid-cols-2 p-8 xl:p-4 bg-white border rounded-xl h-full shadow-sm">
