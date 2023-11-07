@@ -36,7 +36,7 @@ const AllServices = () => {
             onClick={() => setIsShow(!isShow)}
             className="text-white uppercase font-semibold btn mt-5 rounded-lg py-3 px-10 bg-[#E39C0D] hover:bg-[#698F3F]"
           >
-            {isShow ? "Show Less" : "Show all"}
+            {isShow ? "See Less" : "See all"}
           </button>
         </div>
       )}
