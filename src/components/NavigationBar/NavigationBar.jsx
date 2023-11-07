@@ -98,6 +98,9 @@ const NavigationBar = () => {
             <NavLink to="/" className="font-medium" aria-current="page">
               Home
             </NavLink>
+            <NavLink to="/services" className="font-medium" aria-current="page">
+              Services
+            </NavLink>
             {user && (
               <div className="hs-dropdown [--strategy:static] md:[--strategy:fixed] [--adaptive:none]">
                 <button
