@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Login.css";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
@@ -7,6 +7,7 @@ import SocialLogin from "../../components/socialLogin/socialLogin";
 const Login = () => {
   const { userLogIn } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -23,7 +24,9 @@ const Login = () => {
           icon: "success",
           text: "Login successful",
         });
-        navigate("/");
+
+        // navigate after login
+        navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
         console.log(err.message);
