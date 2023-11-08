@@ -11,7 +11,7 @@ const AddServices = () => {
 
     const form = e.target;
 
-    const servicePhoto = form.servicePhoto.value;
+    const serviceImage = form.servicePhoto.value;
     const serviceName = form.serviceName.value;
     const price = form.price.value;
     const description = form.description.value;
@@ -22,7 +22,7 @@ const AddServices = () => {
 
     axios
       .post("http://localhost:5000/service", {
-        servicePhoto,
+        serviceImage,
         serviceName,
         price,
         description,

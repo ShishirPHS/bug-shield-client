@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
+import UserServiceCard from "../../components/UserServiceCard/UserServiceCard";
 
 const MyServices = () => {
   const { user } = useAuth();
@@ -14,9 +15,20 @@ const MyServices = () => {
     });
   }, [url]);
 
-  console.log(userServices);
+  // console.log(userServices);
 
-  return <div>{userServices.length}</div>;
+  return (
+    <div className="container mx-auto py-36">
+      <div className="px-5 grid grid-cols-1 xl:grid-cols-2 gap-6">
+        {userServices.map((singleService) => (
+          <UserServiceCard
+            key={singleService._id}
+            services={singleService}
+          ></UserServiceCard>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default MyServices;
