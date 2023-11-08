@@ -24,6 +24,8 @@ const MyServices = () => {
           <UserServiceCard
             key={singleService._id}
             services={singleService}
+            userServices={userServices}
+            setUserServices={setUserServices}
           ></UserServiceCard>
         ))}
       </div>

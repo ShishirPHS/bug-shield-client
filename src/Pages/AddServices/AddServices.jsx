@@ -1,10 +1,12 @@
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router";
 
 const AddServices = () => {
   const { user } = useAuth();
   const { displayName, email, photoURL } = user;
+  const navigate = useNavigate();
 
   const handleAddService = (e) => {
     e.preventDefault();
@@ -39,6 +41,7 @@ const AddServices = () => {
             text: "Service added successfully",
           });
         }
+        navigate("/myServices");
       });
   };
 
