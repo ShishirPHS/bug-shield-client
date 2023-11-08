@@ -1,6 +1,45 @@
+import axios from "axios";
+import useAuth from "../../hooks/useAuth";
+import Swal from "sweetalert2";
+
 const AddServices = () => {
+  const { user } = useAuth();
+  const { displayName, email, photoURL } = user;
+
   const handleAddService = (e) => {
     e.preventDefault();
+
+    const form = e.target;
+
+    const servicePhoto = form.servicePhoto.value;
+    const serviceName = form.serviceName.value;
+    const price = form.price.value;
+    const description = form.description.value;
+    const serviceProviderName = displayName;
+    const serviceProviderEmail = email;
+    const serviceArea = form.serviceArea.value;
+    const serviceProviderImage = photoURL;
+
+    axios
+      .post("http://localhost:5000/service", {
+        servicePhoto,
+        serviceName,
+        price,
+        description,
+        serviceProviderName,
+        serviceProviderEmail,
+        serviceArea,
+        serviceProviderImage,
+      })
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.insertedId) {
+          Swal.fire({
+            icon: "success",
+            text: "Service added successfully",
+          });
+        }
+      });
   };
 
   return (
@@ -71,6 +110,8 @@ const AddServices = () => {
                   className="mt-1 py-2 px-3 block bg-[#F0F1ED] w-full border-none rounded-md text-sm"
                   placeholder="Service Provider Name"
                   required
+                  value={displayName}
+                  readOnly
                 />
               </div>
               <div className="mt-3">
@@ -83,6 +124,8 @@ const AddServices = () => {
                   className="mt-1 py-2 px-3 block bg-[#F0F1ED] w-full border-none rounded-md text-sm"
                   placeholder="Service Provider Email"
                   required
+                  value={email}
+                  readOnly
                 />
               </div>
 
@@ -95,18 +138,6 @@ const AddServices = () => {
                   name="serviceArea"
                   className="mt-1 py-2 px-3 block bg-[#F0F1ED] w-full border-none rounded-md text-sm"
                   placeholder="Service Area"
-                  required
-                />
-              </div>
-              <div className="mt-3">
-                <label className="text-[#676C75] font-semibold">
-                  Service Provider Image
-                </label>
-                <input
-                  type="text"
-                  name="serviceProviderImage"
-                  className="mt-1 py-2 px-3 block bg-[#F0F1ED] w-full border-none rounded-md text-sm"
-                  placeholder="Service Provider Image"
                   required
                 />
               </div>
