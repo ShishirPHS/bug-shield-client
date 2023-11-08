@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import BookingModal from "../BookingModal/BookingModal";
 
 const SingleServiceDetails = ({ service }) => {
   const {
@@ -50,9 +51,7 @@ const SingleServiceDetails = ({ service }) => {
             </div>
           </div>
           <div className="mt-5">
-            <button className="text-white text-sm uppercase font-medium btn mt-5 rounded-lg py-3 px-10 bg-[#E39C0D] hover:bg-[#698F3F]">
-              Book Now
-            </button>
+            <BookingModal service={service}></BookingModal>
           </div>
         </div>
       </div>
