@@ -33,7 +33,9 @@ const SingleServiceCard = ({ service }) => {
                   <p className="mt-1 text-sm text-gray-500">
                     {description.slice(0, 100)}...
                   </p>
-                  <h6 className="text-[#270f0f] font-semibold mt-1">{price}</h6>
+                  <h6 className="text-[#270f0f] font-semibold mt-1">
+                    ${price}
+                  </h6>
                 </div>
                 <div className="mt-2">
                   <p className="mt-1 mb-2 font-semibold">{`Service provider's infos`}</p>

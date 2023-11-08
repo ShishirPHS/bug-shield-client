@@ -8,6 +8,7 @@ import AllServices from "../../Pages/AllServices/AllServices";
 import AddServices from "../../Pages/AddServices/AddServices";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import ServiceDetails from "../../components/ServiceDetails/ServiceDetails";
+import MyServices from "../../Pages/MyServices/MyServices";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,14 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/services/${params.id}`),
+      },
+      {
+        path: "/myServices",
+        element: (
+          <PrivateRoute>
+            <MyServices></MyServices>
+          </PrivateRoute>
+        ),
       },
     ],
   },
