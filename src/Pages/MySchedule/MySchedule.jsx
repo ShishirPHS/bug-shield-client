@@ -9,8 +9,8 @@ const MySchedule = () => {
   const [userBookings, setUserBookings] = useState([]);
   const [otherUserBookings, setOtherUserBookings] = useState([]);
 
-  const url = `http://localhost:5000/usersBooking?email=${user?.email}`;
-  const url2 = `http://localhost:5000/otherUsersBooking?email=${user?.email}`;
+  const url = `https://bug-shield-server.vercel.app/usersBooking?email=${user?.email}`;
+  const url2 = `https://bug-shield-server.vercel.app/otherUsersBooking?email=${user?.email}`;
 
   useEffect(() => {
     axios.get(url).then((res) => {
@@ -28,7 +28,7 @@ const MySchedule = () => {
     const updatedStatus = document.getElementById("status").value;
     console.log(updatedStatus);
 
-    fetch(`http://localhost:5000/bookings/${id}`, {
+    fetch(`https://bug-shield-server.vercel.app/bookings/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

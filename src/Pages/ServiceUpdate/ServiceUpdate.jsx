@@ -24,7 +24,7 @@ const ServiceUpdate = () => {
     const serviceArea = form.serviceArea.value;
 
     axios
-      .put(`http://localhost:5000/service/${_id}`, {
+      .put(`https://bug-shield-server.vercel.app/service/${_id}`, {
         serviceImage,
         serviceName,
         price,

@@ -11,14 +11,14 @@ const ServiceDetails = () => {
   const [sameProviderServices, setSameProviderServices] = useState([]);
 
   useEffect(() => {
-    axios(`http://localhost:5000/services/${id}`, {
+    axios(`https://bug-shield-server.vercel.app/services/${id}`, {
       withCredentials: true,
     }).then((res) => {
       setService(res.data);
     });
   }, [id]);
 
-  const url = `http://localhost:5000/usersService?email=${service?.serviceProviderEmail}`;
+  const url = `https://bug-shield-server.vercel.app/usersService?email=${service?.serviceProviderEmail}`;
   useEffect(() => {
     axios(url, { withCredentials: true }).then((res) => {
       setSameProviderServices(res.data);

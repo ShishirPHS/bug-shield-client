@@ -24,7 +24,7 @@ const UserServiceCard = ({ services, userServices, setUserServices }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/service/${id}`, {
+        fetch(`https://bug-shield-server.vercel.app/service/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

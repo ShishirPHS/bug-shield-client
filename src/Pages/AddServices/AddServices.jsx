@@ -23,7 +23,7 @@ const AddServices = () => {
     const serviceProviderImage = photoURL;
 
     axios
-      .post("http://localhost:5000/service", {
+      .post("https://bug-shield-server.vercel.app/service", {
         serviceImage,
         serviceName,
         price,

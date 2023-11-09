@@ -106,7 +106,7 @@ const NavigationBar = () => {
                 <button
                   id="hs-mega-menu-basic-dr"
                   type="button"
-                  className="flex items-center w-full text-white hover:text-[#FFA500] font-medium dark:text-gray-400 dark:hover:text-gray-500 "
+                  className="flex items-center w-full text-white hover:text-[#FFA500] font-medium dark:text-gray-400 dark:hover:text-gray-500"
                 >
                   Dashboard
                   <svg

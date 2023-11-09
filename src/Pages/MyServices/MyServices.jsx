@@ -7,7 +7,7 @@ const MyServices = () => {
   const { user } = useAuth();
   const [userServices, setUserServices] = useState([]);
 
-  const url = `http://localhost:5000/usersService?email=${user?.email}`;
+  const url = `https://bug-shield-server.vercel.app/usersService?email=${user?.email}`;
 
   useEffect(() => {
     axios.get(url, { withCredentials: true }).then((res) => {

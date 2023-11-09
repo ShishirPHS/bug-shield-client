@@ -26,7 +26,7 @@ const BookingModal = ({ service }) => {
     const price = form.price.value;
 
     axios
-      .post("http://localhost:5000/booking", {
+      .post("https://bug-shield-server.vercel.app/booking", {
         serviceName,
         serviceImage,
         serviceProviderEmail,

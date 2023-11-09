@@ -56,7 +56,7 @@ const AuthProvider = ({ children }) => {
       // if user exists
       if (currentUser) {
         axios
-          .post("http://localhost:5000/jwt", loggedUser, {
+          .post("https://bug-shield-server.vercel.app/jwt", loggedUser, {
             withCredentials: true,
           })
           .then((res) => {
@@ -64,7 +64,7 @@ const AuthProvider = ({ children }) => {
           });
       } else {
         axios
-          .post("http://localhost:5000/logOut", loggedUser, {
+          .post("https://bug-shield-server.vercel.app/logOut", loggedUser, {
             withCredentials: true,
           })
           .then((res) => {
