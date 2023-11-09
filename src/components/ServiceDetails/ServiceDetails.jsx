@@ -40,7 +40,7 @@ const ServiceDetails = () => {
               ))}
             </div>
           ) : (
-            <p className="text-center">
+            <p className="text-center font-semibold">
               No other services available from this provider
             </p>
           )}
