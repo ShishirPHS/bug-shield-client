@@ -2,7 +2,7 @@ const WhoWeAre = () => {
   return (
     <div className="bg-[url(https://i.ibb.co/tJC1tND/brick-wall.png)]">
       <div className="bg-[#f0f1edcc]">
-        <div className="container mx-auto mb-32 pt-16">
+        <div className="container mx-auto pt-16">
           <div className="flex items-center justify-between">
             {/* text div */}
             <div>
