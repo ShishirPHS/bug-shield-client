@@ -12,5 +12,5 @@ export default {
       Cabin: ["Cabin", "sans-serif"],
     },
   },
-  plugins: [require("preline/plugin")],
+  plugins: [require("preline/plugin"), require("daisyui")],
 };
