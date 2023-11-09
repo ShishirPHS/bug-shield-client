@@ -10,6 +10,7 @@ import {
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import PropTypes from "prop-types";
+import axios from "axios";
 
 export const AuthContext = createContext(null);
 
@@ -46,15 +47,30 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+      const userEmail = currentUser?.email || user?.email;
+      const loggedUser = { email: userEmail };
+
       console.log(currentUser);
       setUser(currentUser);
+
+      // if user exists
+      if (currentUser) {
+        axios
+          .post("http://localhost:5000/jwt", loggedUser, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            console.log("token response: ", res.data);
+          });
+      }
+
       setLoading(false);
     });
 
     return () => {
       unSubscribe();
     };
-  }, []);
+  }, [user?.email]);
 
   const authInfo = {
     user,
