@@ -1,6 +1,6 @@
 const Banner = () => {
   return (
-    <div className="bg-[url(https://i.ibb.co/3vt5gVG/banner-img.jpg)] bg-no-repeat bg-cover mb-28">
+    <div className="bg-[url(https://kit.creativemox.com/bugshield/wp-content/uploads/sites/9/2023/10/garden-pest-control-service-e1698290086768.jpg)] bg-no-repeat bg-cover mb-28">
       <div className="bg-gradient-to-r from-[#c7c7c7cc] to-[#f0f1ed1a] py-[112px]">
         <div className="container mx-auto flex justify-between items-center">
           <div className="ml-24">

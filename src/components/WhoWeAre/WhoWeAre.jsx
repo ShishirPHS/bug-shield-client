@@ -74,7 +74,7 @@ const WhoWeAre = () => {
             <div>
               <img
                 className="w-[640px]"
-                src="https://i.ibb.co/Nt05GrW/whoWeAre.png"
+                src="https://kit.creativemox.com/bugshield/wp-content/uploads/sites/9/2023/10/2-3a.png"
                 alt=""
               />
             </div>
