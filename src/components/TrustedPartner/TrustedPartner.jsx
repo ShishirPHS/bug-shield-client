@@ -3,10 +3,10 @@ const TrustedPartner = () => {
     <div className="container mx-auto py-32">
       {/* heading and title */}
       <div className="mb-10">
-        <h2 className="text-[#26272C] font-semibold text-[39px] text-center w-[640px] mx-auto mb-5">
+        <h2 className="text-[#26272C] font-semibold text-[39px] text-center w-auto lg:w-[640px] mx-auto mb-5">
           Your Trusted Partner in Pest Control Excellence
         </h2>
-        <p className="text-[#676C75] font-Inter w-[600px] mx-auto text-center">
+        <p className="text-[#676C75] font-Inter w-auto lg:w-[600px] mx-auto text-center">
           We are dedicated to providing unparalleled pest control services for
           homes and businesses. With a commitment to excellence, we utilize
           advanced techniques and industry-leading practices.

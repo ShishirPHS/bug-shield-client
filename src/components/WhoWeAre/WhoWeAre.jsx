@@ -3,16 +3,16 @@ const WhoWeAre = () => {
     <div className="bg-[url(https://kit.creativemox.com/bugshield/wp-content/uploads/sites/9/2023/10/brick-wall.png)]">
       <div className="bg-[#f0f1edcc]">
         <div className="container mx-auto pt-16">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col lg:flex-row items-center justify-between">
             {/* text div */}
             <div>
               <h6 className="font-Cabin font-bold text-[#698F3F] mb-6">
                 Who we are
               </h6>
-              <h2 className="w-[540px] text-[#26272C] font-semibold font-Cabin text-[40px] mb-6">
+              <h2 className="w-auto lg:w-[540px] text-[#26272C] font-semibold font-Cabin text-[40px] mb-6">
                 The Trusted Authority in Pest Control
               </h2>
-              <p className="w-[540px] text-[#676C75] font-Inter mb-7">
+              <p className="w-auto lg:w-[540px] text-[#676C75] font-Inter mb-7">
                 We are the trusted authority in pest control, dedicated to
                 providing effective and reliable solutions to protect your home
                 or business. With a commitment to excellence, our team of

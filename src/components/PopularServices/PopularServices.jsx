@@ -18,7 +18,7 @@ const PopularServices = () => {
         <h3 className="text-[#26272C] text-[39px] font-Cabin font-semibold text-center">
           Popular Services
         </h3>
-        <p className="text-[#676C75] font-Inter text-center w-[600px] mx-auto mt-8">
+        <p className="text-[#676C75] font-Inter text-center w-auto lg:w-[600px] mx-auto mt-8">
           Explore our most sought-after pest control services, trusted by
           homeowners and businesses across the region.
         </p>
