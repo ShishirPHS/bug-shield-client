@@ -13,6 +13,9 @@ const AllServices = () => {
 
   return (
     <div className="container mx-auto py-36">
+      <h1 className="text-center text-4xl font-bold font-Cabin mb-12">
+        All Services
+      </h1>
       <div className="px-5 grid grid-cols-1 xl:grid-cols-2 gap-6">
         {isShow
           ? services?.map((service) => (

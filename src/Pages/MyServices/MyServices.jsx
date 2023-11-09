@@ -19,6 +19,9 @@ const MyServices = () => {
 
   return (
     <div className="container mx-auto py-36">
+      <h1 className="text-center text-4xl font-bold font-Cabin mb-12">
+        My Services
+      </h1>
       <div className="px-5 grid grid-cols-1 xl:grid-cols-2 gap-6">
         {userServices.map((singleService) => (
           <UserServiceCard
