@@ -10,7 +10,7 @@ const MyServices = () => {
   const url = `http://localhost:5000/usersService?email=${user?.email}`;
 
   useEffect(() => {
-    axios.get(url).then((res) => {
+    axios.get(url, { withCredentials: true }).then((res) => {
       setUserServices(res.data);
     });
   }, [url]);

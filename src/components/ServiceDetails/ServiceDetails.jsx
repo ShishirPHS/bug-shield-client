@@ -1,22 +1,32 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
 import SingleServiceDetails from "../SingleServiceDetails/SingleServiceDetails";
 import OtherServices from "../OtherServices/OtherServices";
+import { useParams } from "react-router";
 
 const ServiceDetails = () => {
-  const service = useLoaderData();
+  const { id } = useParams();
+  const [service, setService] = useState({});
+
   const [sameProviderServices, setSameProviderServices] = useState([]);
 
-  const url = `http://localhost:5000/usersService?email=${service.serviceProviderEmail}`;
   useEffect(() => {
-    axios(url).then((res) => {
+    axios(`http://localhost:5000/services/${id}`, {
+      withCredentials: true,
+    }).then((res) => {
+      setService(res.data);
+    });
+  }, [id]);
+
+  const url = `http://localhost:5000/usersService?email=${service?.serviceProviderEmail}`;
+  useEffect(() => {
+    axios(url, { withCredentials: true }).then((res) => {
       setSameProviderServices(res.data);
     });
   }, [setSameProviderServices, url]);
 
-  const excludingCurrentOne = sameProviderServices.filter(
-    (services) => services._id !== service._id
+  const excludingCurrentOne = sameProviderServices?.filter(
+    (services) => services?._id !== service?._id
   );
 
   return (
@@ -30,11 +40,11 @@ const ServiceDetails = () => {
             Other Services from this provider
           </p>
           {/* other services */}
-          {excludingCurrentOne.length > 0 ? (
+          {excludingCurrentOne?.length > 0 ? (
             <div className="grid grid-cols-1 gap-4">
               {excludingCurrentOne?.map((service) => (
                 <OtherServices
-                  key={service._id}
+                  key={service?._id}
                   service={service}
                 ></OtherServices>
               ))}
