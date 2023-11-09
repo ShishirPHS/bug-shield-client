@@ -1,6 +1,6 @@
 const WhoWeAre = () => {
   return (
-    <div className="bg-[url(https://i.ibb.co/tJC1tND/brick-wall.png)]">
+    <div className="bg-[url(https://kit.creativemox.com/bugshield/wp-content/uploads/sites/9/2023/10/brick-wall.png)]">
       <div className="bg-[#f0f1edcc]">
         <div className="container mx-auto pt-16">
           <div className="flex items-center justify-between">
