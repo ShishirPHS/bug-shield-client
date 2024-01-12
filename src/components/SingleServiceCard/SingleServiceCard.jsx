@@ -15,10 +15,10 @@ const SingleServiceCard = ({ service }) => {
   return (
     <div>
       <div>
-        <div className="grid grid-cols-2 p-8 xl:p-4 bg-white border rounded-xl h-full shadow-sm">
+        <div className="grid grid-cols-1 lg:grid-cols-2 p-4 xl:p-4 bg-white border rounded-xl h-full shadow-sm">
           <div className="col-span-1 overflow-hidden">
             <img
-              className="rounded-l-xl w-full h-full object-cover"
+              className="rounded-xl lg:rounded-none lg:rounded-l-xl w-full h-full object-cover"
               src={serviceImage}
               alt={`image for ${serviceName}`}
             />
