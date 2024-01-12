@@ -14,7 +14,7 @@ const OtherServices = ({ service }) => {
   } = service;
 
   return (
-    <div className="grid grid-cols-2 p-4 bg-white border rounded-xl h-full shadow-sm">
+    <div className="grid grid-cols-1 lg:grid-cols-2 p-4 bg-white border rounded-xl h-full shadow-sm">
       <div className="col-span-1 overflow-hidden">
         <img
           className="rounded-l-xl w-full h-full object-cover"
@@ -40,12 +40,10 @@ const OtherServices = ({ service }) => {
                 alt=""
               />
               <p className="text-sm">
-                {" "}
                 <span>Provider: </span>
                 <span className="font-bold">{serviceProviderName}</span>
               </p>
               <p className="text-sm">
-                {" "}
                 <span>Service Area: </span>
                 <span className="font-bold">{serviceArea}</span>
               </p>
