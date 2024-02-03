@@ -30,6 +30,7 @@ const SocialLogin = () => {
         <button
           className="flex items-center border px-8 py-3 text-xl rounded-lg mt-5"
           onClick={handleGoogleLogin}
+          type="button"
         >
           <img
             className="w-6 mr-2"
