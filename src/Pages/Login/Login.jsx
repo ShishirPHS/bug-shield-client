@@ -2,7 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Login.css";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
-import SocialLogin from "../../components/socialLogin/socialLogin";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const Login = () => {
   const { userLogIn } = useAuth();

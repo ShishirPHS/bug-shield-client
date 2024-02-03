@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 import { updateProfile } from "firebase/auth";
-import SocialLogin from "../../components/socialLogin/socialLogin";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const Register = () => {
   const { createUser } = useAuth();
