@@ -1,11 +1,13 @@
 import PropTypes from "prop-types";
+import { useState } from "react";
 import Swal from "sweetalert2";
 
 const PendingWorkCard = ({ booking }) => {
-  const handleStatusUpdate = (id) => {
-    const updatedStatus = document.getElementById("status").value;
-    console.log(updatedStatus);
+  const [status, setStatus] = useState(
+    booking.status?.status ? booking.status.status : "Pending"
+  );
 
+  const handleStatusUpdate = (id, updatedStatus) => {
     fetch(`https://bug-shield-server.vercel.app/bookings/${id}`, {
       method: "PATCH",
       headers: {
@@ -23,6 +25,12 @@ const PendingWorkCard = ({ booking }) => {
           });
         }
       });
+  };
+
+  const handleStatusChange = (e) => {
+    const updatedStatus = e.target.value;
+    setStatus(updatedStatus);
+    handleStatusUpdate(booking._id, updatedStatus);
   };
 
   return (
@@ -50,13 +58,9 @@ const PendingWorkCard = ({ booking }) => {
               <div className="mt-2 flex items-center justify-start space-x-2">
                 <p className="font-bold">Status: </p>
                 <select
-                  onChange={() => handleStatusUpdate(booking._id)}
+                  onChange={handleStatusChange}
                   className="bg-[#f1efef] px-2 py-1 rounded-sm"
-                  name="status"
-                  id="status"
-                  defaultValue={
-                    booking.status?.status ? booking?.status?.status : "Pending"
-                  }
+                  value={status}
                 >
                   <option value="pending">Pending</option>
                   <option value="inProgress">In Progress</option>
