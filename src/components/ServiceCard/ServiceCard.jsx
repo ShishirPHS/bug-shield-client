@@ -14,7 +14,11 @@ const ServiceCard = ({ service }) => {
 
   return (
     <div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 p-4 lg:p-8 xl:p-4 bg-white border rounded-xl h-full shadow-sm">
+      <div
+        className="grid grid-cols-1 lg:grid-cols-2 p-4 lg:p-8 xl:p-4 bg-white border rounded-xl h-full shadow-sm"
+        data-aos="zoom-in"
+        data-aos-delay="1500"
+      >
         <div className="col-span-1 overflow-hidden">
           <img
             className="rounded-xl lg:rounded-l-xl w-full h-full object-cover"

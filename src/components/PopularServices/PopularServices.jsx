@@ -15,10 +15,17 @@ const PopularServices = () => {
   return (
     <div className="container mx-auto mb-32">
       <div className="mb-24">
-        <h3 className="text-[#26272C] text-[39px] font-Cabin font-semibold text-center">
+        <h3
+          className="text-[#26272C] text-[39px] font-Cabin font-semibold text-center"
+          data-aos="fade-up"
+        >
           Popular Services
         </h3>
-        <p className="text-[#676C75] font-Inter text-center w-auto lg:w-[600px] mx-auto mt-8">
+        <p
+          className="text-[#676C75] font-Inter text-center w-auto lg:w-[600px] mx-auto mt-8"
+          data-aos="fade-up"
+          data-aos-delay="1000"
+        >
           Explore our most sought-after pest control services, trusted by
           homeowners and businesses across the region.
         </p>
@@ -35,7 +42,11 @@ const PopularServices = () => {
             ))}
       </div>
       {services?.length > 4 && (
-        <div className="flex justify-center mt-10">
+        <div
+          className="flex justify-center mt-10"
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
           <Link className="mt-5" to="/services">
             <button className="text-white uppercase font-semibold btn rounded-lg py-3 px-10 bg-[#E39C0D] hover:bg-[#698F3F]">
               Show all
